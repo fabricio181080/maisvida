@@ -1,0 +1,23 @@
+<form (ngSubmit)="salvar()">   
+ 
+    <br/>
+    <h3>{{titulo}}</h3>
+ 
+    <label>Código:
+        <input type="input" name="codigo" size="10" [(ngModel)]="pessoa.codigo" disabled/>
+    </label><br/><br/>
+ 
+    <label>Estado:
+
+        <select name="singleSelect" id="singleSelect" [(ngModel)]="pessoa.estado.codigo">
+              <option *ngFor="let estado of estados" value="{{estado.codigo}}">{{estado.nome}}</option> 
+        </select>
+    </label><br/><br/>
+    
+    <label>Nome:
+        <input type="input" name="nome" size="30" [(ngModel)]="pessoa.nome"/>
+    </label><br/><br/>
+
+    <button type="submit">Salvar</button>
+
+</form>
